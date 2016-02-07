@@ -22,5 +22,7 @@ module Odot
 
     # Do not swallow errors in after_commit/after_rollback callbacks.
     config.active_record.raise_in_transactional_callbacks = true
+    # config.I18n.defaulr_locale = :en
+    I18n.enforce_available_locales = false
   end
 end
