@@ -16,8 +16,10 @@ describe "Creating todo lists" do
   end
 
   it "redirects to the todo list index page on success" do
+expect(TodoList.count).to eq(0)
     create_todo_list
     expect(page).to have_content("My todo list")
+    expect(TodoList.count).to eq(0)
   end
 
   it "displays an error when the todo list has no title" do
